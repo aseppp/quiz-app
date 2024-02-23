@@ -1,7 +1,7 @@
 "use client";
 
 import { subjects } from "@/data/subject";
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import Question from "@/data/Question.json";
 import { useLocalStorage } from "@/hooks";
 
@@ -9,12 +9,9 @@ export const RootContext = createContext<any>({});
 const RootContextProvider = ({ children }: any) => {
   const [subject, setSubject] = useLocalStorage("subject", {});
   const [initialState, setInitialState] = useLocalStorage("initialState", {});
-
-  const mainSfx = new Audio("/sfx/main-sfx.mp3");
-  // mainSfx.loop = true;
-  const finishQuiz = new Audio("/sfx/finish.mp3");
-  const correct = new Audio("/sfx/correct.mp3");
-  const incorrect = new Audio("/sfx/incorrect.mp3");
+  const [finishQuiz, setFinishQuiz] = useState<any>(null);
+  const [correct, setCorrect] = useState<any>(null);
+  const [incorrect, setIncorrect] = useState<any>(null);
 
   const settSubject = (payload: any) => {
     const title: any = subjects.find((item) => item.title === payload);
@@ -96,7 +93,11 @@ const RootContextProvider = ({ children }: any) => {
     }
   };
 
-  console.log({ initialState });
+  useEffect(() => {
+    setFinishQuiz(new Audio("/sfx/finish.mp3"));
+    setCorrect(new Audio("/sfx/correct.mp3"));
+    setIncorrect(new Audio("/sfx/incorrect.mp3"));
+  }, []);
 
   return (
     <RootContext.Provider
@@ -108,7 +109,6 @@ const RootContextProvider = ({ children }: any) => {
         handleAction,
         handleActionUser,
         completed,
-        mainSfx,
         finishQuiz,
         correct,
         incorrect,
