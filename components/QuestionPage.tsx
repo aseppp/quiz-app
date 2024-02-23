@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { Button } from "./ui/button";
 import { Progress } from "./ui/progress";
 import { RootContext } from "@/context/RootContext";
+import { motion } from "framer-motion";
+import { fadeInOptionAnimations, lists } from "@/lib/animation";
 
 const letters = ["A", "B", "C", "D"];
 
@@ -19,9 +21,16 @@ const QuestionPage = () => {
             {initialState?.questions?.length}
           </p>
 
-          <p className="font-semibold text-2xl lg:text-4xl text-left">
+          <motion.p
+            key={initialState?.questionIndex}
+            variants={lists}
+            transition={{ delay: 0 }}
+            initial="hidden"
+            animate="visible"
+            className="font-semibold text-2xl lg:text-4xl text-left"
+          >
             {question}
-          </p>
+          </motion.p>
         </div>
 
         <div className="my-5 w-full">
@@ -29,11 +38,18 @@ const QuestionPage = () => {
         </div>
       </div>
 
-      <div className="lg:flex-1 w-full lg:w-96 flex flex-col gap-5">
+      <motion.ul
+        key={initialState?.questionIndex}
+        variants={fadeInOptionAnimations}
+        initial="hidden"
+        whileInView="visible"
+        className="lg:flex-1 w-full lg:w-96 flex flex-col gap-5"
+      >
         {initialState?.submitAnswer
           ? options.map((item: string, index: number) => (
-              <div
+              <motion.li
                 key={index}
+                variants={lists}
                 className={`border-2 p-4 rounded-lg flex items-center gap-4 ${
                   index === answer
                     ? "text-black border-black bg-green-200 dark:border-gray-500 dark:bg-green-200 shadow-md"
@@ -46,10 +62,11 @@ const QuestionPage = () => {
                   {letters[index]}
                 </span>
                 <p className="dark:text-black">{item}</p>
-              </div>
+              </motion.li>
             ))
           : options.map((item: string, index: number) => (
-              <div
+              <motion.li
+                variants={lists}
                 key={index}
                 className={`${
                   initialState?.userAnswer === index
@@ -62,36 +79,43 @@ const QuestionPage = () => {
                   {letters[index]}
                 </span>
                 <p className="dark:text-black">{item}</p>
-              </div>
+              </motion.li>
             ))}
 
-        <Button
-          className="mt-4 "
-          disabled={
-            initialState?.userAnswer !== null &&
-            initialState?.userAnswer !== undefined
-              ? false
-              : true
-          }
-          size={"xl"}
-          onClick={() => {
-            if (initialState?.submitAnswer) {
-              handleAction(
-                "next-question",
-                initialState?.subjectIndex,
-                initialState?.questionIndex
-              );
-            } else {
-              handleActionUser(
-                "submit-answer",
-                initialState?.userAnswer === answer ? 10 : 0
-              );
-            }
-          }}
+        <motion.span
+          variants={lists}
+          transition={{ delay: 1 }}
+          initial="hidden"
+          animate="visible"
         >
-          {initialState?.submitAnswer ? "Next question" : "Submit answer"}
-        </Button>
-      </div>
+          <Button
+            className="mt-4 w-full"
+            disabled={
+              initialState?.userAnswer !== null &&
+              initialState?.userAnswer !== undefined
+                ? false
+                : true
+            }
+            size={"xl"}
+            onClick={() => {
+              if (initialState?.submitAnswer) {
+                handleAction(
+                  "next-question",
+                  initialState?.subjectIndex,
+                  initialState?.questionIndex
+                );
+              } else {
+                handleActionUser(
+                  "submit-answer",
+                  initialState?.userAnswer === answer ? 10 : 0
+                );
+              }
+            }}
+          >
+            {initialState?.submitAnswer ? "Next question" : "Submit answer"}
+          </Button>
+        </motion.span>
+      </motion.ul>
     </div>
   );
 };

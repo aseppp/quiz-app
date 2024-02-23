@@ -1,329 +1,290 @@
 [
   [
     {
-      "question": "Which HTML attribute is used to provide an advisory text about an element or group of elements?",
-      "options": ["advice", "Tip", "tooltip", "title"],
-      "answer": 3
-    },
-    {
-      "question": "What is the difference between the 'id' and 'class' attributes of HTML elements?",
+      "question": "What does HTML stand for?",
       "options": [
-        "There is no difference",
-        "id is unique, class can be reused",
-        "id can be reused, class is unique",
-        "id is for CSS, class is for JavaScript"
+        "Hyper Text Markup Language",
+        "Hyperlink and Text Markup Language",
+        "Home Tool Markup Language",
+        "Hyper Tool Markup Language"
       ],
-      "answer": 1
-    },
-    {
-      "question": "Which HTML element is the correct one to use for JavaScript code?",
-
-      "options": ["<scripting>", "<js>", "<javascript>", "<script>"],
-      "answer": 3
-    },
-    {
-      "question": "In HTML, which attribute is used to specify that an input field must be filled out?",
-
-      "options": ["required", "validate", "mandatory", "compulsory"],
       "answer": 0
     },
     {
-      "question": "What is the purpose of using semantic tags in HTML?",
-
+      "question": "Which tag is used to define a hyperlink in HTML?",
+      "options": ["<a>", "<link>", "<href>", "<hyper>"],
+      "answer": 0
+    },
+    {
+      "question": "Which tag is used to define an image in HTML?",
+      "options": ["<img>", "<image>", "<src>", "<picture>"],
+      "answer": 0
+    },
+    {
+      "question": "What is the correct HTML element for the largest heading?",
+      "options": ["<h1>", "<heading>", "<head>", "<big>"],
+      "answer": 0
+    },
+    {
+      "question": "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+      "options": ["alt", "title", "src", "href"],
+      "answer": 0
+    },
+    {
+      "question": "Which tag is used to define an unordered list in HTML?",
+      "options": ["<ul>", "<ol>", "<li>", "<list>"],
+      "answer": 0
+    },
+    {
+      "question": "Which tag is used to define a table row in HTML?",
+      "options": ["<tr>", "<table>", "<td>", "<th>"],
+      "answer": 0
+    },
+    {
+      "question": "What is the correct HTML for creating a hyperlink?",
       "options": [
-        "To format text",
-        "To optimize SEO",
-        "To validate code",
-        "To define structure and meaning"
+        "<a href='http://www.example.com'>Example</a>",
+        "<a url='http://www.example.com'>Example</a>",
+        "<hyperlink>http://www.example.com</hyperlink>",
+        "<link src='http://www.example.com'>Example</link>"
       ],
-      "answer": 3
+      "answer": 0
     },
     {
-      "question": "In HTML, characteristics that define a single HTML element are called..?",
-
-      "options": ["Properties", "Attributes", "Tags", "Elements"],
-      "answer": 1
-    },
-    {
-      "question": "The HTML global attribute 'contenteditable' allows which functionality?",
-
+      "question": "What is the correct HTML for adding a background color?",
       "options": [
-        "Move html elements",
-        "Resize html elements",
-        "Edit html elements",
-        "Delete html elements"
+        "<body style='background-color:yellow;'>",
+        "<background>yellow</background>",
+        "<bg color='yellow'>",
+        "<bgcolor>yellow</bgcolor>"
       ],
-      "answer": 2
+      "answer": 0
     },
     {
-      "question": "What is the difference between <section> and <div> HTML tags?",
-
+      "question": "What is the correct HTML for inserting an image?",
       "options": [
-        "There is no difference",
-        "<div> is for grouping, <section> is semantic",
-        "<section> is for grouping <div> is semantic",
-        "<div> is new, <section> is deprecated"
+        "<img src='image.jpg' alt='MyImage'>",
+        "<image src='image.jpg' alt='MyImage'>",
+        "<img alt='MyImage'>image.jpg</img>",
+        "<img alt='MyImage' src='image.jpg'>"
       ],
-      "answer": 1
-    },
-    {
-      "question": "Which character set is defined in HTML5 as the mandatory encoding for all HTML documents?",
-
-      "options": ["ASCII", "UTF-8", "UTF-16", "ANSI"],
-      "answer": 1
-    },
-    {
-      "question": "Which HTML element specifies a caption for a <table> element?",
-      "options": ["<caption>", "<td>", "<th>", "<tr>"],
       "answer": 0
     }
   ],
   [
     {
-      "question": "Which CSS property controls the text size?",
-      "options": ["text-size", "font-size", "text-style", "font"],
-      "answer": 1
-    },
-    {
-      "question": "How do you insert a comment in CSS code?",
+      "question": "What does CSS stand for?",
       "options": [
-        "// this is a comment ",
-        "/* this is a comment */",
-        "' this is a comment",
-        "// this is a comment //"
+        "Cascading Style Sheets",
+        "Creative Style Sheets",
+        "Computer Style Sheets",
+        "Colorful Style Sheets"
       ],
-      "answer": 1
-    },
-    {
-      "question": "Which CSS property is used to change the text color?",
-      "options": ["text-color", "font-color", "color", "fgcolor"],
-      "answer": 2
-    },
-    {
-      "question": "Which is the correct syntax for referring to an external style sheet?",
-      "options": [
-        "<stylesheet>filename.css</stylesheet>",
-        "style src=\"filename.css\"",
-        "link rel=\"stylesheet\" type=\"text/css\" href=\"filename.css\"",
-        "@import \"filename.css\""
-      ],
-      "answer": 2
-    },
-    {
-      "question": "What is the syntax for an ID selector in CSS?",
-      "options": ["#id", ".id", "*id", "+id"],
       "answer": 0
     },
     {
-      "question": "Which CSS property controls the font family?",
-      "options": ["text-family", "font", "font-group", "font-face"],
-      "answer": 1
+      "question": "Which CSS property is used to change the text color of an element?",
+      "options": ["color", "text-color", "font-color", "foreground-color"],
+      "answer": 0
     },
     {
-      "question": "How do you make each word in a text start with a capital letter?",
+      "question": "Which CSS property is used to set the background color of an element?",
       "options": [
-        "transform: capitalize;",
-        "text-transform: capitalize",
-        "text-capitalize: words;",
-        "transform: uppercase;"
+        "background-color",
+        "bgcolor",
+        "background",
+        "color-background"
       ],
-      "answer": 1
+      "answer": 0
     },
     {
-      "question": "Which position value leaves no space when positioning elements?",
-
-      "options": ["relative", "static", "absolute", "fixed"],
-      "answer": 2
+      "question": "Which CSS property is used to change the font size of an element?",
+      "options": ["font-size", "text-size", "size", "font-style"],
+      "answer": 0
     },
     {
-      "question": "What is the syntax for importing other CSS files into a CSS file?",
-
-      "options": ["import url;", "@import '';", "@import url();", "import '';"],
-      "answer": 2
+      "question": "Which CSS property is used to make text bold?",
+      "options": ["font-weight", "bold", "text-bold", "weight"],
+      "answer": 0
     },
     {
-      "question": "Which CSS property is used for specifying the transparency of an element?",
-      "options": ["opacity", "filter", "visibility", "transparent"],
+      "question": "Which CSS property is used to add space between the letters of a word?",
+      "options": ["letter-spacing", "word-spacing", "text-spacing", "spacing"],
+      "answer": 0
+    },
+    {
+      "question": "Which CSS property is used to specify the stack order of an element?",
+      "options": ["z-index", "stack-order", "order", "position"],
+      "answer": 0
+    },
+    {
+      "question": "Which CSS property is used to create rounded corners?",
+      "options": [
+        "border-radius",
+        "corner-radius",
+        "rounded-corners",
+        "border-style"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Which CSS property is used to make a text italicized?",
+      "options": ["font-style", "italic", "text-style", "style"],
+      "answer": 0
+    },
+    {
+      "question": "Which CSS property is used to specify the space between lines of text?",
+      "options": ["line-height", "text-line-height", "height", "line-spacing"],
       "answer": 0
     }
   ],
   [
     {
-      "question": "What does DOM stand for?",
-      "options": [
-        "Documentation Object Model",
-        "Document Object Model",
-        "Dataflow Object Model",
-        "Digital Object Model"
-      ],
-      "answer": 1
-    },
-    {
-      "question": "How can a JavaScript event handler call an external function?",
-      "options": [
-        "onclick=\"callFunction()\"",
-        "onclick=callFunction",
-        "event.callFunction()",
-        "None of the above"
-      ],
+      "question": "What does JavaScript stand for?",
+      "options": ["JavaScript", "JavaSuper", "JustScript", "JavaSupport"],
       "answer": 0
     },
     {
-      "question": "How do you write \"Hello World\" in an alert box?",
-      "options": [
-        "msg(\"Hello World\");",
-        "msgBox(\"Hello World\");",
-        "alert(\"Hello World\");",
-        "log.text(\"Hello World\");"
-      ],
-      "answer": 2
+      "question": "Which keyword is used to declare variables in JavaScript?",
+      "options": ["var", "int", "variable", "let"],
+      "answer": 0
     },
     {
-      "question": "What does AJAX stand for?",
-      "options": [
-        "Advanced JavaScript and XML",
-        "Asynchronous JAvaScript and XML",
-        "Active JAvaScript and X-files",
-        "Advanced JavaScript and XHR"
-      ],
-      "answer": 1
+      "question": "Which operator is used to assign a value to a variable in JavaScript?",
+      "options": ["=", "==", ":", "+="],
+      "answer": 0
     },
     {
-      "question": "How can you create an object in JavaScript?",
-      "options": [
-        "{} syntax",
-        "new Object()",
-        "object.create()",
-        "All of the above"
-      ],
-      "answer": 3
-    },
-    {
-      "question": "What is a callback function?",
-      "options": [
-        "A normal function.",
-        "A function passed as argument to another function.",
-        "An asynchronous function.",
-        "An event handler function."
-      ],
-      "answer": 1
-    },
-    {
-      "question": "Which of the following will write some text to the console?",
-      "options": ["print()", "log.txt()", "console.log()", "doc.show()"],
-      "answer": 2
-    },
-    {
-      "question": "How does a FOR loop start?",
-      "options": [
-        "for (i less than x; i++)",
-        "for i = 1 to x",
-        "for (i = 0; i < x; i++)",
-        "for (let i = 0; i <= x)"
-      ],
-      "answer": 3
-    },
-    {
-      "question": "What does client-side JavaScript allow you to do?",
-      "options": [
-        "Manipulate HTML elements dynamically",
-        "Store user data locally",
-        "Interact with browsers",
-        "All of the above"
-      ],
-      "answer": 3
+      "question": "Which function is used to print content in the console in JavaScript?",
+      "options": ["console.log()", "print()", "log()", "debug()"],
+      "answer": 0
     },
     {
       "question": "Which symbol is used for comments in JavaScript?",
-      "options": [
-        "// This is a comment ",
-        "# This is a comment",
-        "<!-- This is a comment -->",
-        "/* This is a comment */"
-      ],
-      "answer": 3
+      "options": ["//", "/* */", "<!-- -->", "#"],
+      "answer": 0
+    },
+    {
+      "question": "Which method is used to add an element to the end of an array in JavaScript?",
+      "options": ["push()", "append()", "addToEnd()", "insert()"],
+      "answer": 0
+    },
+    {
+      "question": "Which method is used to remove the last element from an array in JavaScript?",
+      "options": ["pop()", "remove()", "delete()", "splice()"],
+      "answer": 0
+    },
+    {
+      "question": "Which loop is used to iterate through an array in JavaScript?",
+      "options": ["for", "while", "do-while", "foreach"],
+      "answer": 0
+    },
+    {
+      "question": "Which method is used to find the length of a string in JavaScript?",
+      "options": ["length", "count", "size", "len"],
+      "answer": 0
+    },
+    {
+      "question": "Which operator is used for strict equality comparison in JavaScript?",
+      "options": ["===", "==", "=", "!="],
+      "answer": 0
     }
   ],
   [
     {
       "question": "What is React?",
       "options": [
-        "A library for building user interfaces",
-        "A programming language",
-        "A database system",
-        "A web framework"
+        "A JavaScript library for building user interfaces",
+        "A server-side scripting language",
+        "A database management system",
+        "A programming language"
       ],
       "answer": 0
     },
     {
-      "question": "How can you access the state of a React component?",
+      "question": "Which command is used to create a new React app?",
       "options": [
-        "this.values",
-        "this.state",
-        "this.props",
-        "None of the above"
+        "npx create-react-app",
+        "npm init react-app",
+        "create-react-app",
+        "npm create-react"
       ],
-      "answer": 1
-    },
-    {
-      "question": "What syntax is used for rendering a React component into the DOM?",
-
-      "options": [
-        "React.makeComponent()",
-        "ReactDOM.render()",
-        "ReactDOM.create()",
-        "React.renderComponent()"
-      ],
-      "answer": 1
-    },
-    {
-      "question": "React uses _____ to increase performance",
-      "options": ["Original DOM", "Virtual DOM", "Shadow DOM", "New DOM"],
-      "answer": 1
-    },
-    {
-      "question": "What is used to pass data to a React component from outside?",
-      "options": ["setState", "render with arguments", "props", "propTypes"],
-      "answer": 2
+      "answer": 0
     },
     {
       "question": "What is JSX?",
-
       "options": [
-        "JavaScript Syntax Extension",
-        "JavaScript XML",
-        "JSON Syntax Extension",
-        "JSON XHTML"
+        "A syntax extension for JavaScript",
+        "A package manager for React",
+        "A testing framework for React",
+        "A build tool for React"
       ],
       "answer": 0
     },
     {
-      "question": "Which lifecycle method is invoked immediately a component is added to DOM?",
-
+      "question": "Which function is used to render a React component?",
       "options": [
-        "componentDidMount",
-        "shouldComponentUpdate ",
-        "componentWillUnmount",
-        "render"
+        "ReactDOM.render()",
+        "React.render()",
+        "renderComponent()",
+        "component.render()"
       ],
       "answer": 0
     },
     {
-      "question": "Which package contains ReactDOM?",
-
-      "options": ["React", "Webpack", "HTML", "React-DOM"],
-      "answer": 3
+      "question": "Which lifecycle method is invoked immediately after a component is inserted into the DOM?",
+      "options": [
+        "componentDidMount()",
+        "componentDidUpdate()",
+        "componentWillUnmount()",
+        "componentWillMount()"
+      ],
+      "answer": 0
     },
     {
-      "question": "Which of these is not a valid hook?",
-
-      "options": ["useEffect()", "useMap()", "useState()", "useContext()"],
-      "answer": 1
+      "question": "What is the purpose of state in React?",
+      "options": [
+        "To store component-specific data that may change",
+        "To define static data for a component",
+        "To manage routing in React",
+        "To handle asynchronous operations"
+      ],
+      "answer": 0
     },
     {
-      "question": "Which tool is used to transpile JSX?",
-      "options": ["ReactDOM", "Webpack", "Babel", "React Router"],
-      "answer": 2
+      "question": "Which method is used to update the state of a component in React?",
+      "options": [
+        "setState()",
+        "updateState()",
+        "changeState()",
+        "modifyState()"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "What is a prop in React?",
+      "options": [
+        "An input to a component",
+        "A method for updating state",
+        "A lifecycle method",
+        "A built-in React component"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Which hook is used to add state to a functional component in React?",
+      "options": ["useState()", "useEffect()", "useContext()", "useReducer()"],
+      "answer": 0
+    },
+    {
+      "question": "What is the virtual DOM in React?",
+      "options": [
+        "A lightweight copy of the real DOM",
+        "An alternative to JSX",
+        "A type of React component",
+        "A way to handle routing in React"
+      ],
+      "answer": 0
     }
   ]
 ]
