@@ -8,8 +8,15 @@ import { fadeInOptionAnimations, lists } from "@/lib/animation";
 const letters = ["A", "B", "C", "D"];
 
 const QuestionPage = () => {
-  const { initialState, handleAction, handleActionUser } =
-    useContext(RootContext);
+  const {
+    initialState,
+    handleAction,
+    handleActionUser,
+    completed,
+    correct,
+    incorrect,
+    finishQuiz,
+  } = useContext(RootContext);
   const { question, answer, options } = initialState?.question;
 
   return (
@@ -43,14 +50,14 @@ const QuestionPage = () => {
         variants={fadeInOptionAnimations}
         initial="hidden"
         whileInView="visible"
-        className="lg:flex-1 w-full lg:w-96 flex flex-col gap-5"
+        className="lg:flex-1 w-full lg:w-96 flex flex-col gap-5 "
       >
         {initialState?.submitAnswer
           ? options.map((item: string, index: number) => (
               <motion.li
                 key={index}
                 variants={lists}
-                className={`border-2 p-4 rounded-lg flex items-center gap-4 ${
+                className={`border-2 p-4 lg:p-6 rounded-lg flex items-center gap-4 ${
                   index === answer
                     ? "text-black border-black bg-green-200 dark:border-gray-500 dark:bg-green-200 shadow-md"
                     : index === initialState?.userAnswer
@@ -58,10 +65,10 @@ const QuestionPage = () => {
                     : "bg-white text-black"
                 }`}
               >
-                <span className="w-8 h-8 flex items-center justify-center rounded bg-black text-white  ">
+                <span className="w-8 h-8 flex items-center justify-center rounded bg-black text-white ">
                   {letters[index]}
                 </span>
-                <p className="dark:text-black">{item}</p>
+                <p className="lg:text-xl dark:text-black">{item}</p>
               </motion.li>
             ))
           : options.map((item: string, index: number) => (
@@ -72,13 +79,13 @@ const QuestionPage = () => {
                   initialState?.userAnswer === index
                     ? "text-black border-black bg-gray-200 dark:border-gray-500 dark:bg-gray-400 shadow-md"
                     : "bg-white text-black"
-                } border-2 p-4 rounded-lg flex items-center gap-4 `}
+                } border-2 p-4 lg:p-6 rounded-lg flex items-center gap-4`}
                 onClick={() => handleActionUser("select-answer", index)}
               >
-                <span className="w-8 h-8 flex items-center justify-center rounded bg-black text-white  ">
+                <span className="w-8 h-8 flex items-center justify-center rounded bg-black text-white ">
                   {letters[index]}
                 </span>
-                <p className="dark:text-black">{item}</p>
+                <p className="lg:text-xl dark:text-black ">{item}</p>
               </motion.li>
             ))}
 
@@ -109,10 +116,22 @@ const QuestionPage = () => {
                   "submit-answer",
                   initialState?.userAnswer === answer ? 10 : 0
                 );
+
+                if (initialState?.userAnswer === answer) {
+                  correct.play();
+                } else if (initialState?.userAnswer !== answer && !completed) {
+                  incorrect.play();
+                } else {
+                  finishQuiz.play();
+                }
               }
             }}
           >
-            {initialState?.submitAnswer ? "Next question" : "Submit answer"}
+            {initialState?.submitAnswer
+              ? "Next question"
+              : completed
+              ? "Finish test"
+              : "Submit answer"}
           </Button>
         </motion.span>
       </motion.ul>

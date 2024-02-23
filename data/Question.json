@@ -41,12 +41,12 @@
       "answer": 0
     },
     {
-      "question": "What is the correct HTML for creating a hyperlink?",
+      "question": "What is the correct HTML for making a text bold?",
       "options": [
-        "<a href='http://www.example.com'>Example</a>",
-        "<a url='http://www.example.com'>Example</a>",
-        "<hyperlink>http://www.example.com</hyperlink>",
-        "<link src='http://www.example.com'>Example</link>"
+        "<strong>text</strong>",
+        "<b>text</b>",
+        "<bold>text</bold>",
+        "<em>text</em>"
       ],
       "answer": 0
     },

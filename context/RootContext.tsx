@@ -10,6 +10,12 @@ const RootContextProvider = ({ children }: any) => {
   const [subject, setSubject] = useLocalStorage("subject", {});
   const [initialState, setInitialState] = useLocalStorage("initialState", {});
 
+  const mainSfx = new Audio("/sfx/main-sfx.mp3");
+  // mainSfx.loop = true;
+  const finishQuiz = new Audio("/sfx/finish.mp3");
+  const correct = new Audio("/sfx/correct.mp3");
+  const incorrect = new Audio("/sfx/incorrect.mp3");
+
   const settSubject = (payload: any) => {
     const title: any = subjects.find((item) => item.title === payload);
     return setSubject(title);
@@ -36,6 +42,8 @@ const RootContextProvider = ({ children }: any) => {
           questions: Question[subjectIndex],
           points: 0,
         });
+        // mainSfx.play();
+        // mainSfx.loop = true;ddser
         break;
 
       case "next-question":
@@ -99,6 +107,11 @@ const RootContextProvider = ({ children }: any) => {
         settSubject,
         handleAction,
         handleActionUser,
+        completed,
+        mainSfx,
+        finishQuiz,
+        correct,
+        incorrect,
       }}
     >
       {children}

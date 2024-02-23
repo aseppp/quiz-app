@@ -1,5 +1,5 @@
 import { RootContext } from "@/context/RootContext";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 
