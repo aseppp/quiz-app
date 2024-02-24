@@ -7,10 +7,9 @@ import { useLocalStorage } from "@/hooks";
 
 export const RootContext = createContext<any>({});
 const RootContextProvider = ({ children }: any) => {
-  // const [subject, setSubject] = useLocalStorage("subject", {});
-  // const [initialState, setInitialState] = useLocalStorage("initialState", {});
-  const [subject, setSubject] = useState<any>({});
-  const [initialState, setInitialState] = useState<any>({});
+  const [subject, setSubject] = useLocalStorage("subject", {});
+  const [initialState, setInitialState] = useLocalStorage("initialState", {});
+
   const [finishQuiz, setFinishQuiz] = useState<any>(null);
   const [correct, setCorrect] = useState<any>(null);
   const [incorrect, setIncorrect] = useState<any>(null);
