@@ -7,8 +7,10 @@ import { useLocalStorage } from "@/hooks";
 
 export const RootContext = createContext<any>({});
 const RootContextProvider = ({ children }: any) => {
-  const [subject, setSubject] = useLocalStorage("subject", {});
-  const [initialState, setInitialState] = useLocalStorage("initialState", {});
+  // const [subject, setSubject] = useLocalStorage("subject", {});
+  // const [initialState, setInitialState] = useLocalStorage("initialState", {});
+  const [subject, setSubject] = useState<any>({});
+  const [initialState, setInitialState] = useState<any>({});
   const [finishQuiz, setFinishQuiz] = useState<any>(null);
   const [correct, setCorrect] = useState<any>(null);
   const [incorrect, setIncorrect] = useState<any>(null);
@@ -97,7 +99,7 @@ const RootContextProvider = ({ children }: any) => {
     setFinishQuiz(new Audio("/sfx/finish.mp3"));
     setCorrect(new Audio("/sfx/correct.mp3"));
     setIncorrect(new Audio("/sfx/incorrect.mp3"));
-  }, []);
+  }, [initialState?.status]);
 
   return (
     <RootContext.Provider

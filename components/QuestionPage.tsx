@@ -4,7 +4,12 @@ import { Progress } from "./ui/progress";
 import { RootContext } from "@/context/RootContext";
 import { motion } from "framer-motion";
 import { fadeInOptionAnimations, lists } from "@/lib/animation";
+import { Outfit } from "next/font/google";
 
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
 const letters = ["A", "B", "C", "D"];
 
 const QuestionPage = () => {
@@ -21,9 +26,9 @@ const QuestionPage = () => {
 
   return (
     <div className="w-full m-auto flex flex-col lg:flex-row lg:gap-10 p-5">
-      <div className="lg:flex-1 flex flex-col justify-between items-center lg:items-start">
+      <div className="lg:flex-1 flex flex-col justify-between items-start lg:items-start">
         <div>
-          <p className="italic mb-2">
+          <p className="italic mb-2 text-beige">
             Question {initialState?.questionIndex + 1} of{" "}
             {initialState?.questions?.length}
           </p>
@@ -34,14 +39,20 @@ const QuestionPage = () => {
             transition={{ delay: 0 }}
             initial="hidden"
             animate="visible"
-            className="font-semibold text-2xl lg:text-4xl text-left"
+            className="font-semibold text-2xl lg:text-4xl text-left text-beige"
           >
             {question}
           </motion.p>
         </div>
 
         <div className="my-5 w-full">
-          {<Progress value={initialState?.questionIndex * 10} />}
+          {
+            <Progress
+              className="bg-yellow-primary"
+              style={{ color: "white" }}
+              value={initialState?.questionIndex * 10}
+            />
+          }
         </div>
       </div>
 
@@ -57,11 +68,13 @@ const QuestionPage = () => {
               <motion.li
                 key={index}
                 variants={lists}
-                className={`border-2 p-4 lg:p-6 rounded-lg flex items-center gap-4 ${
+                className={`${
+                  outfit.className
+                } border-2 p-4 lg:p-6 rounded-lg flex items-center gap-4 ${
                   index === answer
-                    ? "text-black border-black bg-green-200 dark:border-gray-500 dark:bg-green-200 shadow-md"
+                    ? "text-black border-black bg-green-primary dark:bg-green-200 shadow-md"
                     : index === initialState?.userAnswer
-                    ? "bg-red-200"
+                    ? "bg-red-primary border-black"
                     : "bg-white text-black"
                 }`}
               >
@@ -75,10 +88,10 @@ const QuestionPage = () => {
               <motion.li
                 variants={lists}
                 key={index}
-                className={`${
+                className={`${outfit.className} ${
                   initialState?.userAnswer === index
-                    ? "text-black border-black bg-gray-200 dark:border-gray-500 dark:bg-gray-400 shadow-md"
-                    : "bg-white text-black"
+                    ? "text-black border-black bg-yellow-primary dark:border-gray-500 dark:bg-gray-400 shadow-md"
+                    : "text-black bg-beige"
                 } border-2 p-4 lg:p-6 rounded-lg flex items-center gap-4`}
                 onClick={() => handleActionUser("select-answer", index)}
               >
@@ -96,7 +109,7 @@ const QuestionPage = () => {
           animate="visible"
         >
           <Button
-            className="mt-4 w-full"
+            className={`${outfit.className} mt-4 w-full bg-purple-primary hover:bg-purple-primary text-black lg:text-xl`}
             disabled={
               initialState?.userAnswer !== null &&
               initialState?.userAnswer !== undefined

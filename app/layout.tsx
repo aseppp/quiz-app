@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Paytone_One, Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import RootContextProvider from "../context/RootContext";
 
-const poppins = Poppins({
+const paytone = Paytone_One({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={poppins.className}>
+      <body className={`${paytone.className} poppins.className bg-dark`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
