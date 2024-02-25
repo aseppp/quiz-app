@@ -8,11 +8,9 @@ import { useLocalStorage } from "@/hooks";
 export const RootContext = createContext<any>({});
 const RootContextProvider = ({ children }: any) => {
   const audioRef = useRef<HTMLAudioElement>(null);
-  // const [subject, setSubject] = useLocalStorage("subject", {});
-  // const [initialState, setInitialState] = useLocalStorage("initialState", {});
+  const [subject, setSubject] = useLocalStorage("subject", {});
+  const [initialState, setInitialState] = useLocalStorage("initialState", {});
 
-  const [subject, setSubject] = useState<any>({});
-  const [initialState, setInitialState] = useState<any>({});
   const [isPlaying, setIsPlaying] = useState(false);
 
   const [mainSfx, setMainSfx] = useState<any>(null);

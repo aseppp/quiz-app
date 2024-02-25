@@ -3,6 +3,7 @@ import { Paytone_One, Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import RootContextProvider from "../context/RootContext";
+import Head from "next/head";
 
 const paytone = Paytone_One({
   subsets: ["latin"],
@@ -21,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <Head>
+        <meta content="#0f0d0e" name="theme-color" />
+      </Head>
       <body className={`${paytone.className} poppins.className bg-dark`}>
         <ThemeProvider
           attribute="class"
