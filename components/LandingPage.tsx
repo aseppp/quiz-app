@@ -12,7 +12,7 @@ const outfit = Outfit({
 });
 
 const LandingPage = () => {
-  const { settSubject, handleAction } = useContext(RootContext);
+  const { settSubject, handleAction, mainSfx } = useContext(RootContext);
   const text = "Welcome to the";
   const heading = Array.isArray(text) ? text : [text];
 

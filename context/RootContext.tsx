@@ -1,15 +1,21 @@
 "use client";
 
 import { subjects } from "@/data/subject";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import Question from "@/data/Question.json";
 import { useLocalStorage } from "@/hooks";
 
 export const RootContext = createContext<any>({});
 const RootContextProvider = ({ children }: any) => {
-  const [subject, setSubject] = useLocalStorage("subject", {});
-  const [initialState, setInitialState] = useLocalStorage("initialState", {});
+  const audioRef = useRef<HTMLAudioElement>(null);
+  // const [subject, setSubject] = useLocalStorage("subject", {});
+  // const [initialState, setInitialState] = useLocalStorage("initialState", {});
 
+  const [subject, setSubject] = useState<any>({});
+  const [initialState, setInitialState] = useState<any>({});
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const [mainSfx, setMainSfx] = useState<any>(null);
   const [finishQuiz, setFinishQuiz] = useState<any>(null);
   const [correct, setCorrect] = useState<any>(null);
   const [incorrect, setIncorrect] = useState<any>(null);
@@ -23,6 +29,37 @@ const RootContextProvider = ({ children }: any) => {
     initialState?.questions?.length - 1 === initialState?.questionIndex
       ? true
       : false;
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    } else {
+      if (audioRef.current) {
+        audioRef.current.play();
+        audioRef.current.loop = true; // Enable looping when audio starts playing
+      }
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  const restart = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      if (!isPlaying) {
+        togglePlay();
+      }
+    }
+  };
+
+  const stop = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setIsPlaying(false);
+    }
+  };
 
   const handleAction = (
     action: string,
@@ -40,8 +77,7 @@ const RootContextProvider = ({ children }: any) => {
           questions: Question[subjectIndex],
           points: 0,
         });
-        // mainSfx.play();
-        // mainSfx.loop = true;ddser
+        togglePlay();
         break;
 
       case "next-question":
@@ -95,10 +131,11 @@ const RootContextProvider = ({ children }: any) => {
   };
 
   useEffect(() => {
+    setMainSfx(new Audio("/sfx/main-sfx.mp3"));
     setFinishQuiz(new Audio("/sfx/finish.mp3"));
     setCorrect(new Audio("/sfx/correct.mp3"));
     setIncorrect(new Audio("/sfx/incorrect.mp3"));
-  }, [initialState?.status]);
+  }, [initialState?.status, initialState?.questionIndex]);
 
   return (
     <RootContext.Provider
@@ -113,8 +150,14 @@ const RootContextProvider = ({ children }: any) => {
         finishQuiz,
         correct,
         incorrect,
+        mainSfx,
+        stop,
       }}
     >
+      <audio ref={audioRef}>
+        <source src={"/sfx/main-sfx.mp3"} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
       {children}
     </RootContext.Provider>
   );

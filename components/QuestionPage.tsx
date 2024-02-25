@@ -21,6 +21,7 @@ const QuestionPage = () => {
     correct,
     incorrect,
     finishQuiz,
+    stop,
   } = useContext(RootContext);
   const { question, answer, options } = initialState?.question;
 
@@ -75,7 +76,7 @@ const QuestionPage = () => {
                     ? "text-black border-black bg-green-primary dark:bg-green-200 shadow-md"
                     : index === initialState?.userAnswer
                     ? "bg-red-primary border-black"
-                    : "bg-white text-black"
+                    : "bg-white text-black "
                 }`}
               >
                 <span className="w-8 h-8 flex items-center justify-center rounded bg-black text-white ">
@@ -92,7 +93,7 @@ const QuestionPage = () => {
                   initialState?.userAnswer === index
                     ? "text-black border-black bg-yellow-primary dark:border-gray-500 dark:bg-gray-400 shadow-md"
                     : "text-black bg-beige"
-                } border-2 p-4 lg:p-6 rounded-lg flex items-center gap-4`}
+                } border-2 p-4 lg:p-6 rounded-lg flex items-center gap-4 cursor-pointer`}
                 onClick={() => handleActionUser("select-answer", index)}
               >
                 <span className="w-8 h-8 flex items-center justify-center rounded bg-black text-white ">
@@ -109,7 +110,7 @@ const QuestionPage = () => {
           animate="visible"
         >
           <Button
-            className={`${outfit.className} mt-4 w-full bg-purple-primary hover:bg-purple-primary text-black lg:text-xl`}
+            className={`${outfit.className} mt-4 w-full bg-purple-primary hover:bg-purple-primary text-black text-xl`}
             disabled={
               initialState?.userAnswer !== null &&
               initialState?.userAnswer !== undefined
@@ -130,11 +131,12 @@ const QuestionPage = () => {
                   initialState?.userAnswer === answer ? 10 : 0
                 );
 
-                if (initialState?.userAnswer === answer) {
+                if (initialState?.userAnswer === answer && !completed) {
                   correct.play();
                 } else if (initialState?.userAnswer !== answer && !completed) {
                   incorrect.play();
-                } else {
+                } else if (completed) {
+                  stop();
                   finishQuiz.play();
                 }
               }
