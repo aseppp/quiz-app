@@ -3,12 +3,12 @@
     {
       "question": "What does HTML stand for?",
       "options": [
-        "Hyper Text Markup Language",
         "Hyperlink and Text Markup Language",
         "Home Tool Markup Language",
+        "Hyper Text Markup Language",
         "Hyper Tool Markup Language"
       ],
-      "answer": 0
+      "answer": 2
     },
     {
       "question": "Which tag is used to define a hyperlink in HTML?",
@@ -43,44 +43,44 @@
     {
       "question": "What is the correct HTML for making a text bold?",
       "options": [
-        "<strong>text</strong>",
         "<b>text</b>",
+        "<strong>text</strong>",
         "<bold>text</bold>",
         "<em>text</em>"
       ],
-      "answer": 0
+      "answer": 1
     },
     {
       "question": "What is the correct HTML for adding a background color?",
       "options": [
-        "<body style='background-color:yellow;'>",
         "<background>yellow</background>",
         "<bg color='yellow'>",
-        "<bgcolor>yellow</bgcolor>"
+        "<bgcolor>yellow</bgcolor>",
+        "<body style='background-color:yellow;'>"
       ],
-      "answer": 0
+      "answer": 3
     },
     {
       "question": "What is the correct HTML for inserting an image?",
       "options": [
-        "<img src='image.jpg' alt='MyImage'>",
         "<image src='image.jpg' alt='MyImage'>",
         "<img alt='MyImage'>image.jpg</img>",
+        "<img src='image.jpg' alt='MyImage'>",
         "<img alt='MyImage' src='image.jpg'>"
       ],
-      "answer": 0
+      "answer": 2
     }
   ],
   [
     {
       "question": "What does CSS stand for?",
       "options": [
-        "Cascading Style Sheets",
         "Creative Style Sheets",
+        "Cascading Style Sheets",
         "Computer Style Sheets",
         "Colorful Style Sheets"
       ],
-      "answer": 0
+      "answer": 1
     },
     {
       "question": "Which CSS property is used to change the text color of an element?",
@@ -90,12 +90,12 @@
     {
       "question": "Which CSS property is used to set the background color of an element?",
       "options": [
-        "background-color",
         "bgcolor",
         "background",
+        "background-color",
         "color-background"
       ],
-      "answer": 0
+      "answer": 2
     },
     {
       "question": "Which CSS property is used to change the font size of an element?",
@@ -120,12 +120,12 @@
     {
       "question": "Which CSS property is used to create rounded corners?",
       "options": [
-        "border-radius",
         "corner-radius",
         "rounded-corners",
-        "border-style"
+        "border-style",
+        "border-radius"
       ],
-      "answer": 0
+      "answer": 3
     },
     {
       "question": "Which CSS property is used to make a text italicized?",
@@ -171,8 +171,8 @@
     },
     {
       "question": "Which method is used to remove the last element from an array in JavaScript?",
-      "options": ["pop()", "remove()", "delete()", "splice()"],
-      "answer": 0
+      "options": ["remove()", "delete()", "splice()", "pop()"],
+      "answer": 3
     },
     {
       "question": "Which loop is used to iterate through an array in JavaScript?",
@@ -186,90 +186,90 @@
     },
     {
       "question": "Which operator is used for strict equality comparison in JavaScript?",
-      "options": ["===", "==", "=", "!="],
-      "answer": 0
+      "options": ["==", "=", "===", "!="],
+      "answer": 2
     }
   ],
   [
     {
       "question": "What is React?",
       "options": [
-        "A JavaScript library for building user interfaces",
         "A server-side scripting language",
+        "A JavaScript library for building user interfaces",
         "A database management system",
         "A programming language"
       ],
-      "answer": 0
+      "answer": 1
     },
     {
       "question": "Which command is used to create a new React app?",
       "options": [
-        "npx create-react-app",
         "npm init react-app",
         "create-react-app",
+        "npx create-react-app",
         "npm create-react"
       ],
-      "answer": 0
+      "answer": 2
     },
     {
       "question": "What is JSX?",
       "options": [
-        "A syntax extension for JavaScript",
         "A package manager for React",
         "A testing framework for React",
-        "A build tool for React"
+        "A build tool for React",
+        "A syntax extension for JavaScript"
       ],
-      "answer": 0
+      "answer": 3
     },
     {
       "question": "Which function is used to render a React component?",
       "options": [
-        "ReactDOM.render()",
         "React.render()",
+        "ReactDOM.render()",
         "renderComponent()",
         "component.render()"
       ],
-      "answer": 0
+      "answer": 1
     },
     {
       "question": "Which lifecycle method is invoked immediately after a component is inserted into the DOM?",
       "options": [
-        "componentDidMount()",
         "componentDidUpdate()",
         "componentWillUnmount()",
+        "componentDidMount()",
         "componentWillMount()"
       ],
-      "answer": 0
+      "answer": 2
     },
     {
       "question": "What is the purpose of state in React?",
       "options": [
-        "To store component-specific data that may change",
         "To define static data for a component",
         "To manage routing in React",
-        "To handle asynchronous operations"
+        "To handle asynchronous operations",
+        "To store component-specific data that may change"
       ],
-      "answer": 0
+      "answer": 3
     },
     {
       "question": "Which method is used to update the state of a component in React?",
       "options": [
-        "setState()",
         "updateState()",
+        "setState()",
         "changeState()",
         "modifyState()"
       ],
-      "answer": 0
+      "answer": 1
     },
     {
       "question": "What is a prop in React?",
       "options": [
-        "An input to a component",
         "A method for updating state",
         "A lifecycle method",
+        "An input to a component",
         "A built-in React component"
       ],
-      "answer": 0
+      "answer": 2
     },
     {
       "question": "Which hook is used to add state to a functional component in React?",
